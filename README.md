@@ -124,3 +124,13 @@ Classes can be forward-declared if you only need to use the pointer-to-that-clas
 This is useful inside class definitions, if a class contains a member that is a pointer(or a reference) to another class.
 ** Forward-declaration ** is used to avoid unnecessary coupling which help reducing compilation time by reducing the number of header inclusion.
  HOW??? - reducing the number of files opened by #include, reducing the volume of the pre-processed filed.
+ 
+ 
+ 
+ ### Variadic templates 
+ source from : http://eli.thegreenplace.net/2014/variadic-templates-in-c/
+ Variadic templates can be used for ....  
+ 
+ 
+ 
+ 
