@@ -21,9 +21,12 @@ An LValue referes to an object that persists beyond a single expression.
 Why we need to do that?
 -> **In order to avoid making an unnecessary copy.**
 
-> class Foo
+> class Foo 
+
 {
+
 public :
+
       std::string member;
       Foo(const std::string& member) : member{member} {}
 };
