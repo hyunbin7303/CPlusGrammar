@@ -6,7 +6,7 @@ This repository is used for studying *c++* grammar.
 - template specialization
 - [LValue & RValue](#LValueRValue)
 
-<a name="there_you_go"></a>Take me there
+
 
 This site was built using [GitHub Pages](https://pages.github.com/).
 <hr/>
