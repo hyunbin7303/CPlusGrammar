@@ -103,3 +103,24 @@ void wrapper(T&& arg)
 }
 ```
 
+
+
+
+### Forward declaration
+source from : https://en.wikipedia.org/wiki/Forward_declaration
+In computer programming, a forward declaration is a decaration of an identifier for which the programmer has not yet given a complete definition. It is required for a compiler to know certain properties of an identifier(size of memory allocation, data type for type checking, such as type signature of functions), but not other details, like the particular value it holds in case of variables or constants or definition.
+
+```
+void kevinPark(int);
+```
+The line above represents a forward declaration of a function and is the function's prototype. After processing this declaration, the compiler would allow the program code to refer to the entity kevinPark in the rest of the program.
+
+In c++, classes and structs can be forward-declared like this:
+```
+class MyClass;
+struct MyStruct;
+```
+Classes can be forward-declared if you only need to use the pointer-to-that-class type(since all object pointers are the same size)
+This is useful inside class definitions, if a class contains a member that is a pointer(or a reference) to another class.
+** Forward-declaration ** is used to avoid unnecessary coupling which help reducing compilation time by reducing the number of header inclusion.
+ HOW??? - reducing the number of files opened by #include, reducing the volume of the pre-processed filed.
