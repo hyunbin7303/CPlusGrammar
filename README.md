@@ -44,10 +44,10 @@ binds to that temporary, and then the temporary is copied to Foo::member.
 By using an RValue reference, we can skip copying the temporary by moving it directly
 into the member.
 
-Foo(std::string&& member): member{std::move(member)} {}
+**Foo(std::string&& member): member{std::move(member)} {}**
 ....
 
-bar+baz creates a temporary, the std::string&& member parameter binds to that temporary,
+bar+baz creates a temporary, the **std::string&& member parameter** binds to that temporary,
 and we invoke Foo::emeber's move constructor with member{std::move(member)}.
 
 
