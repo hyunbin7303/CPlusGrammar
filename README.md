@@ -1,5 +1,5 @@
-# CPlusGrammar
-This repository is used for studying c++ grammar. 
+# CPlusGrammar 
+This repository is used for studying *c++* grammar. 
 
 - template specialization
 - LValue & RValue
@@ -19,9 +19,9 @@ An LValue referes to an object that persists beyond a single expression.
  LValue references is a reference that binds to an RValue, like temporary object.
  
 Why we need to do that?
--> In order to avoid making an unnecessary copy.
+-> **In order to avoid making an unnecessary copy.**
 
-class Foo
+> class Foo
 {
 public :
       std::string member;
