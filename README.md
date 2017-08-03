@@ -6,9 +6,10 @@ This repository is used for studying *c++* grammar.
 
 This site was built using [GitHub Pages](https://pages.github.com/).
 
-[LearnCPlusCode](docs/CONTRIBUTING.md)
 
 ## LValue & RValue
+[Link to LValueRValue.cpp](https://github.com/hyunbin7303/CPlusGrammar/blob/master/LValueRValue.cpp)
+
 An LValue referes to an object that persists beyond a single expression.
   As an object that has a name. (All variables, including nonmodifiable(const variables)).
  
