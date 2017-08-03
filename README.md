@@ -69,8 +69,37 @@ Perfect forwarding allows us to preserver an argument's value category(LValue/ R
 Perfect forwarding is performed in two steps. 
 1) Receive a forwarding reference.
 2) forward it using std::forward.
+[Information about std::forward](#WhatIsForward)
+
+Perfect forwarding allows us to write one function(or constructor)
+and perfectly forward each parameter either as an RValue / LValue, depending on how it was passed in.
+
+class Foo 
 
 
 
 
+
+
+
+
+
+
+
+<hr/>
+
+
+## Appendix
+<a name="WhatIsForward"></a>
+### std::forward
+According to http://en.cppreference.com/w/cpp/utility/forward,
+Forwards LValues as either LValues or as RValues, depending on T.
+ex)
+```
+template<class T>
+void wrapper(T&& arg)
+{   // arg is always LValue
+    foo(std::forward<t>(arg));  // Forward as LValue or as RValue, depending on T
+}
+```
 
