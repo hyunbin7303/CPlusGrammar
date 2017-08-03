@@ -37,7 +37,7 @@ public :
       std::string member;
       Foo(const std::string& member) : member{member} {}
 };
-color: "#B9D9FF" Foo foo{bar + baz}; 
+Foo foo{bar + baz}; 
 ```
 bar+ baz creates a temporary std::string, the const std::string&member parameter
 binds to that temporary, and then the temporary is copied to Foo::member.
