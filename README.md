@@ -50,7 +50,10 @@ into the member.
 
 bar+baz creates a temporary, the **std::string&& member parameter** binds to that temporary,
 and we invoke Foo::emeber's move constructor with member{std::move(member)}.
+(member parameter is not an RValue!) It is an LValue of type RValue reference.
+use std::move(member) to cast the member parameter back to an RValue.(So we invoke std::string's std::string move constructor!)
 
+RValue references mark binding 
 
 
 <hr/>
@@ -59,9 +62,13 @@ and we invoke Foo::emeber's move constructor with member{std::move(member)}.
 
 <a name="Perfectforwarding"></a>
 ## Perfect forwarding
-
-
-
+information from : 
+http://www.cppsamples.com/common-tasks/perfect-forwarding.html
+Forward arguments of one function to another as if the wrapped function had been called directly.
+Perfect forwarding allows us to preserver an argument's value category(LValue/ RValue) and const/volatile modifiers.
+Perfect forwarding is performed in two steps. 
+1) Receive a forwarding reference.
+2) forward it using std::forward.
 
 
 
