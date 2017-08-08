@@ -89,6 +89,12 @@ int d = get<int>(v);
 ```
 A variant is permitted to hold the same type more than once, and to hold differently cv-qualified versions of the same type. 
 
+Tha basic difference between variant and union is that variant knows which type it store while union expects you to keep track of that externally. So if you try to access the wrong item in a variant, you will get an exception or nullptr.
+By contrast, doing so with a union is merely undefined behaviour.
+
+Union is a lower-level tool, but variant has machinery for doing visitation.
+What is [visitation?](#visitation)
+
 It might be used with std::get
 ### std::get
 Reads the value of the variant given the index or the type. 
@@ -161,5 +167,5 @@ A Union is a user-defined type in which all members share the same memory locati
  
  
  
- 
+ ### Visitation 
  
