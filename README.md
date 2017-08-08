@@ -54,7 +54,35 @@ and we invoke Foo::emeber's move constructor with member{std::move(member)}.
 (member parameter is not an RValue!) It is an LValue of type RValue reference.
 use std::move(member) to cast the member parameter back to an RValue.(So we invoke std::string's std::string move constructor!)
 
-RValue references mark binding 
+
+
+```
+class Kevin
+{
+private:
+	std::string str;
+
+public:
+	Kevin(std::string something) : str{ std::move(str) } {}
+};
+
+```
+Good thing about this code is that
+CASE 1 : use RValue.
+str's move constructor would be used.
+After that, **Kevin::str**'s move constructor would be invoked.
+RESULT : 0 copy, 2 moves.
+
+CASE 2 : use LValue
+str's copy constructor would in invoked.
+After hat, Kevin::str's move constructor would be invoked.
+RESULT : 1 copy, 1 move.
+
+
+
+
+
+
 
 
 <hr/>
@@ -169,3 +197,16 @@ A Union is a user-defined type in which all members share the same memory locati
  
  ### Visitation 
  
+
+
+### std::move
+http://www.cplusplus.com/reference/utility/move/
+It returns an RValue reference to arg.
+This is helpful function to force move semantics on values, even if they have a name: Directly using the returned value causes argument to be considered as RValue.
+
+https://mbevin.wordpress.com/2012/11/20/move-semantics/
+When we are passing an object to an function(or when we are returning an object from a function), it is better to do a move(rather than a copy) if:
+* The object is an RValue
+* The object's class defines the special member move functions.
+
+What happen is that, data is removed from the old object when 'move' happens, and it replaced into a new object.
