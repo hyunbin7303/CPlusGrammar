@@ -6,6 +6,7 @@ This repository is used for studying *c++* grammar.
 - template specialization
 - [LValue & RValue](#LValueRValue)
 - [Perfect forwarding](#Perfectforwarding)
+- [Using variants](#variants)
 
 
 
@@ -74,8 +75,30 @@ Perfect forwarding is performed in two steps.
 Perfect forwarding allows us to write one function(or constructor)
 and perfectly forward each parameter either as an RValue / LValue, depending on how it was passed in.
 
-class Foo 
+<hr/>
 
+## using variants 
+According to http://en.cppreference.com/w/cpp/utility/variant,
+The class template std::variant represents a type-safe union. 
+An instance of std::variant at any given time either holds a value of one of its alternative types,
+or it holds no value. 
+
+```
+variant<int, string> v = 10;
+int d = get<int>(v);
+```
+A variant is permitted to hold the same type more than once, and to hold differently cv-qualified versions of the same type. 
+
+It might be used with std::get
+### std::get
+Reads the value of the variant given the index or the type. 
+
+####  Return Value
+Reference to the value stored in the variant.
+
+### CV type qualifiers
+http://en.cppreference.com/w/cpp/language/cv
+For the type T(including incompete types), other than function type and reference type,
 
 
 
