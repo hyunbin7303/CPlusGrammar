@@ -155,5 +155,11 @@ This is useful inside class definitions, if a class contains a member that is a 
  Variadic templates can be used for ....  
  
  
+ ### Union 
+https://docs.microsoft.com/en-us/cpp/cpp/unions
+A Union is a user-defined type in which all members share the same memory location. It means that at any given time aunion can contain no more than one object from its list of members, it also means that no matter how many members a union has, it always uses only enough memory to store the largest member.
+ 
+ 
+ 
  
  
