@@ -7,7 +7,7 @@ This repository is used for studying *c++* grammar.
 - [LValue & RValue](#LValueRValue)
 - [Perfect forwarding](#Perfectforwarding)
 - [Using variants](#variants)
-
+- [type template Parameter](#typeTemplateParameter)
 
 
 This site was built using [GitHub Pages](https://pages.github.com/).
@@ -85,6 +85,8 @@ RESULT : 1 copy, 1 move.
 
 
 
+
+
 <hr/>
 
 
@@ -138,7 +140,21 @@ For the type T(including incompete types), other than function type and referenc
 
 
 
+## Type template Parameter
+<a name="typeTemplateParameter"></a>
+From : http://en.cppreference.com/w/cpp/language/template_parameters      
 
+1) A type template parameter with an optional name - using ** typename **
+2) Using class instead of typename ( same as 1))
+3) A type template parameter with an optional name and a default
+4) A type template parameter pack with an optional name
+
+### Template template parameter
+
+
+
+### Using Non-type template Parameter
+The advantage of using this parameter is that the type of the corresponding non-type template argument deduced automatically.
 
 
 
