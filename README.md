@@ -210,3 +210,19 @@ When we are passing an object to an function(or when we are returning an object 
 * The object's class defines the special member move functions.
 
 What happen is that, data is removed from the old object when 'move' happens, and it replaced into a new object.
+
+
+### std::for_each
+https://stackoverflow.com/questions/2047414/advantages-of-stdfor-each-over-for-loop      
+Advantages:
+1. For_each allows people to write an algorithm on top of for_each that works with any iterator.
+2. For_each reduces the chance of typing bugs.
+3. For_each is more generic, so it enables me to iterate over any type of container by passing in the being/end iteroators.
+
+http://www.fluentcpp.com/2017/01/05/the-importance-of-knowing-stl-algorithms/        
+Specific reason foor_each is used : when performing side effects.
+For_each should be used to modify the elements of the collection it is applied on, or to perform side effectts on a more general sense, like sending information to a logger or to an external service.
+
+IF You rather need to count the number of times a value is present is a collection, use std::count.
+IF You rather need to know if there is at least one element satisfying a predicate, use std::all_of.
+IF you rather need to know whether a collection is a permutation of another one, use std::_permutation.
