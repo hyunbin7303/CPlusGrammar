@@ -173,9 +173,14 @@ A non-type template-parameter should have one of the following (optionally cv-qu
 
 A non-type template argument provided within a template argument list is an expression whose value can be determined at compile time.
 - const expressions, addresses of functions, objects with external linkage, addresses of static class members.
-Also, string literals are objects with internal linkage, so cannot use them as template arguments. 
-X use global pointer. 
-X use Floating point literals. 
+Also, string literals are objects with internal linkage, so cannot use them as template arguments.          
+**Cannot Declare as a Floating point, class, or void type.**
+Because Non-type template parameters are not **LValues**                
+
+According to http://open-std.org/JTC1/SC22/WG21/docs/papers/2016/p0127r1.html         
+## Using auto
+The template parameter list syntax can be extended in a simple and natural way using the auto keyword to indicate that
+the type of a value parameter is deduced at the point of instantiation. 
 
 <hr/>
 
@@ -194,6 +199,11 @@ void wrapper(T&& arg)
 }
 ```
 
+### constexpr specifier      
+http://en.cppreference.com/w/cpp/language/constexpr         
+It declares that it is possible to evaluate the value of the function or variable at compile time.        
+Such variables and functions can then be used where only compile time constant expressions are allowed.
+This specifier used in a function or static member variable declaration implies inline. ( c++ 17)
 
 
 
