@@ -255,14 +255,26 @@ const auto& v5 = zx; //v5's type = const int& (auto  = const int)
 const auto& v6 = ax; //v6's type = const int& (auto = const int)
 ```
 
-### Universal Reference 
+### Universal Reference         
+https://www.youtube.com/watch?v=wQxj20X-tIU&t=587s       
 ```
 template<typename T>
 void foo(T&& param);
 f(expr);
 ```
+* If expr is LValue with deduced type E, T deduced as E&.
+--> Reference-collapsing yeirds type E& for param. 
 
+```
+int x = 22;
+const int cx = x;
+const int& rx = x; 
+f(x);		// x is LValue => T = int&, param's type = int&
+f(cx);		// cx is LValue => T = const int&, param's type = const int&
+f(rx); 		// rx is LValue => T = const int&, param's type = const int&
+f(22); 		// x is Rvalue => No special handling; T = int, param's type is int&&
 
+```
 
 <hr/>
 
