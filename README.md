@@ -244,6 +244,26 @@ const int *ax = &x; 	// pointer to const view of int
 f(&x); 			// T= int, param's type = const int*
 f(ax);			// T= const int, Param's type = const int*
 ```
+### Auto and Non-UReference / Pointer Variables       
+```
+auto& v1 = x; 	// v1's type = int& (auto = int)
+auto& v2 = zx;  // v2's type = const int& (auto = const int)
+auto& v3 = ax;	// v3's type = const int& (auto = const int)
+
+const auto& v4 = x; // v4's type = const int& (auto = int)
+const auto& v5 = zx; //v5's type = const int& (auto  = const int)
+const auto& v6 = ax; //v6's type = const int& (auto = const int)
+```
+
+### Universal Reference 
+```
+template<typename T>
+void foo(T&& param);
+f(expr);
+```
+
+
+
 <hr/>
 
 
@@ -260,6 +280,11 @@ void wrapper(T&& arg)
     foo(std::forward<t>(arg));  // Forward as LValue or as RValue, depending on T
 }
 ```
+**Note: T not a pointer!**
+
+
+
+
 
 ### constexpr specifier      
 http://en.cppreference.com/w/cpp/language/constexpr         
