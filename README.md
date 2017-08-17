@@ -8,6 +8,8 @@ This repository is used for studying *c++* grammar.
 - [Perfect forwarding](#Perfectforwarding)
 - [Using variants](#variants)
 - [type template Parameter](#typeTemplateParameter)
+- [NON-type template Parameter](#NONtypeTemplateParameter)
+
 
 
 This site was built using [GitHub Pages](https://pages.github.com/).
@@ -156,8 +158,24 @@ From : http://en.cppreference.com/w/cpp/language/template_parameters
 ### Using Non-type template Parameter
 The advantage of using this parameter is that the type of the corresponding non-type template argument deduced automatically.
 
+- [NON-type template Parameter](#NONtypeTemplateParameter)
 
+## Non-Type Template parameter
 
+https://stackoverflow.com/questions/5687540/non-type-template-parameters        
+
+A non-type template-parameter should have one of the following (optionally cv-qualified) types:
+* Integral or enumeration type 
+* Pointer to object or pointer to function.
+* LValue reference to object or LValue reference to function.
+* Pointer to member.
+* std::nullptr_t
+
+A non-type template argument provided within a template argument list is an expression whose value can be determined at compile time.
+- const expressions, addresses of functions, objects with external linkage, addresses of static class members.
+Also, string literals are objects with internal linkage, so cannot use them as template arguments. 
+X use global pointer. 
+X use Floating point literals. 
 
 <hr/>
 
