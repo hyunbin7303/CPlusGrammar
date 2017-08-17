@@ -147,13 +147,14 @@ For the type T(including incompete types), other than function type and referenc
 <a name="typeTemplateParameter"></a>
 From : http://en.cppreference.com/w/cpp/language/template_parameters      
 
-1) A type template parameter with an optional name - using ** typename **
+1) A type template parameter with an optional name - using **typename**
 2) Using class instead of typename ( same as 1))
 3) A type template parameter with an optional name and a default
 4) A type template parameter pack with an optional name
 
-### Template template parameter
 
+### Parameter Substitution in templates
+e.g.
 
 
 ### Using Non-type template Parameter
@@ -211,7 +212,7 @@ template<typename T>
 void f(T& param);
 
 int x = 30;		// int
-const int zx = x; 	// copt of int
+const int zx = x; 	// copy of int
 const int& ax = x;	// reference to const view of int
 f(x); 			// T= int, param's type = int&
 f(zx);			// T= const int, Param's type = const int&
@@ -219,6 +220,30 @@ f(ax);			// T = const int, Param's type = const int&
 ```
 **Note: T not a reference**
 
+### Non-URef Reference / Pointer Parameters
+ParamType of const T& ==> T changes, but Param's type doesn't it:
+```
+template<typename T>
+void foo(const T& param); // Reference const T? 
+
+int x = 30; // int
+const int zx  = x; // copy of int 
+const int &ax = x; // reference to const view of int 
+f(x); 			// T= int, param's type = const int&
+f(zx);			// T= const int, Param's type = const int&
+f(ax);			// T = const int, Param's type = const int&
+
+```
+
+```
+template<typename T>
+void foo(T* param); // param now a pointer. 
+
+int x = 30; // int
+const int *ax = &x; 	// pointer to const view of int 
+f(&x); 			// T= int, param's type = const int*
+f(ax);			// T= const int, Param's type = const int*
+```
 <hr/>
 
 
