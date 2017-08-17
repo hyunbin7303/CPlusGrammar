@@ -204,8 +204,20 @@ THree general cases :
 ### Non-URef refence / Pointer Parameters.
 Type deduction very simple:
 * If expr's type is a reference, ignore that.
+* Pattern-match expr's type against ParamType to determinte T.
 
+``` 
+template<typename T>
+void f(T& param);
 
+int x = 30;		// int
+const int zx = x; 	// copt of int
+const int& ax = x;	// reference to const view of int
+f(x); 			// T= int, param's type = int&
+f(zx);			// T= const int, Param's type = const int&
+f(ax);			// T = const int, Param's type = const int&
+```
+**Note: T not a reference**
 
 <hr/>
 
