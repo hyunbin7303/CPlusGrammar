@@ -2,8 +2,8 @@
 
 This repository is used for studying *c++* grammar. 
 
-
-- template specialization
+- [What is Non-static member function?](#Nonstaticmemberfunction)
+- [template specialization](#TemplateSpecialization)
 - [LValue & RValue](#LValueRValue)
 - [Perfect forwarding](#Perfectforwarding)
 - [Using variants](#variants)
@@ -13,13 +13,30 @@ This repository is used for studying *c++* grammar.
 
 
 
+
+
+
 This site was built using [GitHub Pages](https://pages.github.com/).
 <hr/>
+
+<a name="Nonstaticmemberfunction"></a>
+## What is Non-static member function?
+http://en.cppreference.com/w/cpp/language/member_functions      
+A non-static member function is a function that is declared in a member specification of a class without a static or friend specifier.
+
+
+
+
+<a name="TemplateSpecialization"></a>
+## Template Specialization
+
+
+
 
 <a name="LValueRValue"></a>
 ## LValue & RValue
 
-[Link to LValueRValue.cpp](https://github.com/hyunbin7303/CPlusGrammar/blob/master/LValueRValue.cpp)
+[Link to LValueRValue.cpp](https://github.com/hyunbin7303/CPlusGrammar/blob/master/LValueRValue.cpp)             
 
 An LValue referes to an object that persists beyond a single expression.
   As an object that has a name. (All variables, including nonmodifiable(const variables)).
