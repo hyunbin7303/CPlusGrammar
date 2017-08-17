@@ -9,6 +9,7 @@ This repository is used for studying *c++* grammar.
 - [Using variants](#variants)
 - [type template Parameter](#typeTemplateParameter)
 - [NON-type template Parameter](#NONtypeTemplateParameter)
+- [Template Type Deduction](#TemplateTypeDeduction)
 
 
 
@@ -181,6 +182,30 @@ According to http://open-std.org/JTC1/SC22/WG21/docs/papers/2016/p0127r1.html
 ## Using auto
 The template parameter list syntax can be extended in a simple and natural way using the auto keyword to indicate that
 the type of a value parameter is deduced at the point of instantiation. 
+
+
+<a name="TemplateTypeDeduction"></a>
+## (auto-related) Template Type Deduction
+
+```
+template<typename T>
+void foo(paramType param);
+foo(expr); // deduce T and paramType from expr
+```
+You are deducing two different things: 
+T -> the deduced type.
+ParamType -> Often different from T (e.g. const T&).
+Because of deducing T, depends on form of the parameter declaration.
+THree general cases :
+1. ParamType is a reference or pointer, but not a universal reference.
+2. ParamType is a universal reference.
+3. ParamType is neither reference nor pointer.
+
+### Non-URef refence / Pointer Parameters.
+Type deduction very simple:
+* If expr's type is a reference, ignore that.
+
+
 
 <hr/>
 
