@@ -11,7 +11,7 @@ This repository is used for studying *c++* grammar.
 - [NON-type template Parameter](#NONtypeTemplateParameter)
 - [Template Type Deduction](#TemplateTypeDeduction)
 - [Deterministic & Nondeterministic algorithm](#deterministic)
-
+- [Smart Pointer](#SmartPointer)
 
 
 
@@ -302,8 +302,9 @@ f(22); 		// x is Rvalue => No special handling; T = int, param's type is int&&
 
 
 <hr/>
+
 <a name="deterministic"></a>
-## Deterministic & Nondeterministic algorithm
+## Deterministic & Nondeterministic algorithm            
 non-deterministic algorithm - Same input, can display different behaviors on different runs.
 A concurrent algorithm can perform differently on different runs due to a race condition.
 Probabilistic algorithm.... random number generator.
@@ -312,6 +313,23 @@ When we say "Algorithm", it refers to a deterministic algorithm.
 nondeterministic algorithm represents a single path -> many paths.
 
 <hr/>
+
+## Smart Pointer
+<a name="SmartPointer"></a>
+
+### unique_ptr
+- A smart pointer that owns and manages another object through a pointer and disposes of that object when the 
+unique_ptr goes out of scope.       
+
+
+
+
+
+
+
+
+<hr/>
+
 ## Appendix
 <a name="WhatIsForward"></a>
 ### std::forward
