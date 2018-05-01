@@ -316,10 +316,22 @@ nondeterministic algorithm represents a single path -> many paths.
 
 ## Smart Pointer
 <a name="SmartPointer"></a>
+FRom : https://msdn.microsoft.com/en-us/library/hh279674.aspx      
+- <memory> header file.       
+- RAII or Resource Acquisition Is Initialization programming idiom.      
+To ensure that resource acquisition occurs at the same time that the object is initialized.    
+
+
 
 ### unique_ptr
 - A smart pointer that owns and manages another object through a pointer and disposes of that object when the 
 unique_ptr goes out of scope.       
+- Cannot copy(since smart pointer deletes objects that already exist).
+
+Only data member in unique_ptr is the encapsulated pointer, which is that unique_ptr
+is exactly the same size as that pointer, either four bytes or eight bytes.
+
+
 
 
 
