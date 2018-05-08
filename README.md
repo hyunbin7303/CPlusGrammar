@@ -1,6 +1,7 @@
 # CPlusGrammar 
 
 This repository is used for studying *c++* grammar. 
+- [Call Back](#CallBack)
 - [Passing Parameters as Const Reference](#ConstReference)
 - [What is Non-static member function?](#Nonstaticmemberfunction)
 - [template specialization](#TemplateSpecialization)
@@ -20,12 +21,29 @@ This repository is used for studying *c++* grammar.
 This site was built using [GitHub Pages](https://pages.github.com/).
 <hr/>
 
+
+<a name="CallBack"></a>
+## Call Back
+From http://thispointer.com/designing-callbacks-in-c-part-1-function-pointers/       
+Callback is a function that we pass to another APIs as argument while calling them.
+From https://stackoverflow.com/questions/2298242/callback-functions-in-c      
+A callback is a callable accepted by a class or function, used to customize the current logic
+depending on that callback.     
+Reason - Why we use this is to write generic code which is independent from the logic in the 
+called function and can be reused with different callbacks.      
+
+It is normally used in the algorithm library. For instance like for_each, it applies an 
+unaray callback to every item in a range of iterators.
+
+
+
+<hr/>
 <a name="ConstReference"></a>
 ## Passing Parameters as Const Reference
 
 
 
-
+<hr/>
 <a name="Nonstaticmemberfunction"></a>
 ## What is Non-static member function?
 http://en.cppreference.com/w/cpp/language/member_functions      
