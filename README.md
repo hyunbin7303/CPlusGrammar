@@ -1,7 +1,7 @@
 # CPlusGrammar 
 
 This repository is used for studying *c++* grammar. 
-- [C++ 11](#C++11)
+
 - [Call Back](#CallBack)
 - [Passing Parameters as Const Reference](#ConstReference)
 - [What is Non-static member function?](#Nonstaticmemberfunction)
@@ -22,13 +22,6 @@ This repository is used for studying *c++* grammar.
 This site was built using [GitHub Pages](https://pages.github.com/).
 <hr/>
 
-
-
-<a name="C++11"></a>
-## C++ 11 
-
-
-<hr/>
 <a name="CallBack"></a>
 ## Call Back
 From http://thispointer.com/designing-callbacks-in-c-part-1-function-pointers/       
@@ -43,8 +36,6 @@ It is normally used in the algorithm library. For instance like for_each, it app
 unaray callback to every item in a range of iterators.
 
 
-
-<hr/>
 <a name="ConstReference"></a>
 ## Passing Parameters as Const Reference
 
