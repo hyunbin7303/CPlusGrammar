@@ -110,3 +110,26 @@ int main()
   return 0;
 }
 ```
+
+```
+struct twoNumbers
+{
+  int value1;
+  int value2;
+};
+twoNumbers fooStruct(in invalue)
+{
+  return twoNumbers{ invalue *2, invalue *3};
+}
+int main()
+{
+  int number, ans;
+  twoNumbers result = fooStruct(6);
+  number = result.value1;
+  answer = result.value2;
+  
+}
+
+```
+
+#### std::optional
