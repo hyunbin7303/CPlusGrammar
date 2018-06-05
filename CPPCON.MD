@@ -133,3 +133,34 @@ int main()
 ```
 
 #### std::optional
+
+#### tuple, tie, structed bindings
+```
+std::tuple<int, int> fooTwo(int num)
+{
+  return std::make_tuple(num*2, num*3);
+}
+int main()
+{
+  int answer, number;
+  std::tie(answer, number)= fooTwo(6);
+  return 0;
+}
+int main()
+{
+  auto[answer, number] = fooTwo(6);
+  return 0;
+}
+
+```
+* Benefit - When parameters are passed by pointer or non-const ref, readers can assume they are in-out parameters.
+
+#### Prefer to use class enums over "plain" enum
+```
+enum class Error { OK, FileNotFound, OutOfMemory };
+enum class Ratings { Terrible, OK, Terrific};
+
+Error result = Error::OK;
+Ratings stars = Ratings::OK;
+```
+
