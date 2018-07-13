@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WideChar.cpp">
+    <ClCompile Include="template_Specialization2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
