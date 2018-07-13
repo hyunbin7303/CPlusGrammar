@@ -37,23 +37,36 @@ unaray callback to every item in a range of iterators.
 
 
 <a name="ConstReference"></a>
-## Passing Parameters as Const Reference
+## Passing Parameters as Const Reference         
+source : http://www.learncpp.com/cpp-tutorial/73-passing-arguments-by-reference/       
+### Limitation of pass by reference.
+Non-const references can only reference non-const L-Values(e.g. non-const variables), so a reference parameter cannot accept an argument
+ that is a const L-value or an R-Value.
+* One drawbacks of pass by value is that all arguments passed by value are copied into the function parameters.
+
+### Why we use this?
+Passing class types by value is *expensive*, since the compiler have to do often:
+* allocate a temporary local variable of the type.
+* Copy the bytes of the argument to the temporary.
+* Pass a pointer to the temporary into the function.
+
+### When is the proper time we use this?
+References allow the function to change the value of the argument. Sometimes, we just want to use the variable for read-only.
+We can ensure that the function will not change the argument. 
+
+### Advantages
+* It enlists the compilers help in ensuring values that shouldn’t be changed aren’t changed 
+* It tells the programmer that the function won’t change the value of the argument. This can help with debugging.
+* You can’t pass a const argument to a non-const reference parameter. Using const parameters ensures you can pass both non-const and const arguments to the function.
+* Const references can accept any type of argument, including l-values, const l-values, and r-values.
 
 
 
 <hr/>
 <a name="Nonstaticmemberfunction"></a>
-## What is Non-static member function?
-http://en.cppreference.com/w/cpp/language/member_functions      
+## What is Non-static member function?            
+http://en.cppreference.com/w/cpp/language/member_functions            
 A non-static member function is a function that is declared in a member specification of a class without a static or friend specifier.
-
-
-
-
-<a name="TemplateSpecialization"></a>
-## Template Specialization
-
-
 
 
 <a name="LValueRValue"></a>
@@ -61,7 +74,7 @@ A non-static member function is a function that is declared in a member specific
 
 [Link to LValueRValue.cpp](https://github.com/hyunbin7303/CPlusGrammar/blob/master/LValueRValue.cpp)             
 
-An LValue referes to an object that persists beyond a single expression.
+An LValue refers to an object that persists beyond a single expression.
   As an object that has a name. (All variables, including nonmodifiable(const variables)).
  
  An RValue is a temporary value that does not persist beyond the expression that uses it.
