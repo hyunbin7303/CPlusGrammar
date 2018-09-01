@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="QueryPerformanceCounter.cpp">
+    <ClCompile Include="wifstream.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
