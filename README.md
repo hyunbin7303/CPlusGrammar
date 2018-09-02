@@ -1,4 +1,4 @@
-# CPlusGrammar 
+# CPlusGrammer 
 
 This repository is used for studying *c++* grammar. 
 
